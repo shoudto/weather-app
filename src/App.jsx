@@ -38,6 +38,34 @@ function App() {
           Search
         </button>
       </form>
+
+      {/* Current Weather Section */}
+      <section className="bg-white dark:bg-gray-800 rounded shadow p-4 mb-6">
+        <h2 className="text-xl font-semibold mb-2">Current weather</h2>
+        <p>City: --</p>
+        <p>Temperature: --°C / --°F</p>
+        <p>Humidity --%</p>
+        <p>Description: --</p>
+        {/* Weather Icon will go here */}
+      </section>
+
+      {/* 💡 Forecast Section (placeholder) */}
+      <section>
+        <h2 className="text-xl font-semibold mb-2">5-Day Forecast</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          {[1, 2, 3, 4, 5].map((day) => (
+            <div
+              key={day}
+              className="bg-white dark:bg-gray-800 rounded shadow p-4 text-center"
+            >
+              <p>Day {day}</p>
+              <p>High: --°</p>
+              <p>Low: --°</p>
+              <p>Icon</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
