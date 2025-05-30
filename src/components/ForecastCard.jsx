@@ -1,6 +1,8 @@
 import React from "react";
 
-export default function ForecastCard() {
+export default function ForecastCard({ weatherData }) {
+  if (!weatherData) return null;
+
   return (
     <div>
       <section>

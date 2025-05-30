@@ -9,7 +9,9 @@ import ForecastCard from "./components/ForecastCard";
 function App() {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState(null);
+  const [forecastData, setForecastData] = useState(null);
 
+  // Weather API
   const handleSearch = async (e) => {
     e.preventDefault();
 
@@ -51,7 +53,7 @@ function App() {
       <CurrentWeather weatherData={weatherData} />
 
       {/* 💡 Forecast Section (placeholder) */}
-      <ForecastCard />
+      <ForecastCard weatherData={weatherData} />
     </div>
   );
 }
