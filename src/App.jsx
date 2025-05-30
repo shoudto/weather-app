@@ -8,6 +8,7 @@ import ForecastCard from "./components/ForecastCard";
 
 function App() {
   const [city, setCity] = useState("");
+  const [weatherData, setWeatherData] = useState(null);
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -27,7 +28,7 @@ function App() {
       }
 
       const data = await res.json();
-      console.log(data);
+      setWeatherData(data);
     } catch (err) {
       console.log(err.message);
     }
@@ -44,10 +45,10 @@ function App() {
       </header>
 
       {/* Search Form */}
-      <SearchForm city={city} />
+      <SearchForm city={city} setCity={setCity} handleSearch={handleSearch} />
 
       {/* Current Weather Section */}
-      <CurrentWeather />
+      <CurrentWeather weatherData={weatherData} />
 
       {/* 💡 Forecast Section (placeholder) */}
       <ForecastCard />

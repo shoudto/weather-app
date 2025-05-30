@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function SearchForm({ city }) {
+export default function SearchForm({ city, setCity, handleSearch }) {
   return (
     <div>
       {/* Search Form */}
-      <form className="mb-6 flex gap-2">
+      <form onSubmit={handleSearch} className="mb-6 flex gap-2">
         <input
           className="flex-1 px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
           type="text"
