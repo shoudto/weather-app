@@ -25,12 +25,21 @@ function App() {
         }&units=metric`
       );
 
+      const forecastRes = await fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${
+          import.meta.env.VITE_OPENWEATHER_API_KEY
+        }`
+      );
+
       if (!res.ok) {
         throw new Error("city not found");
       }
 
       const data = await res.json();
       setWeatherData(data);
+
+      const dataForecast = await forecastRes.json();
+      setForecastData(dataForecast);
     } catch (err) {
       console.log(err.message);
     }
@@ -53,7 +62,7 @@ function App() {
       <CurrentWeather weatherData={weatherData} />
 
       {/* 💡 Forecast Section (placeholder) */}
-      <ForecastCard weatherData={weatherData} />
+      <ForecastCard forecastData={forecastData} />
     </div>
   );
 }

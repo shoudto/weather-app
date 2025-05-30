@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function ForecastCard({ weatherData }) {
-  if (!weatherData) return null;
+export default function ForecastCard({ forecastData }) {
+  if (!forecastData) return null;
 
   return (
     <div>

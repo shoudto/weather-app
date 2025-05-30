@@ -3,6 +3,8 @@ import React from "react";
 export default function CurrentWeather({ weatherData }) {
   if (!weatherData) return null;
 
+  console.log(weatherData);
+
   return (
     <div>
       <section className="bg-white dark:bg-gray-800 rounded shadow p-4 mb-6">
