@@ -10,7 +10,7 @@ export default function SearchForm({ city, setCity, handleSearch }) {
           type="text"
           placeholder="Enter city..."
           value={city}
-          onChange={(e) => setCity(e.target.value)}
+          onChange={(e) => setCity(e.target.value.trimStart())}
         />
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"

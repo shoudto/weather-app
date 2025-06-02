@@ -3,6 +3,8 @@ import React from "react";
 export default function CurrentWeather({ weatherData }) {
   if (!weatherData) return null;
 
+  const toFahrenheit = (celsius) => (celsius * 9) / 5 + 32;
+
   return (
     <div>
       <section className="bg-white dark:bg-gray-800 rounded shadow p-4 mb-6">
@@ -13,7 +15,8 @@ export default function CurrentWeather({ weatherData }) {
         </p>
         <p>
           <span className="font-bold">Temperature: </span>
-          {weatherData.main.temp_min}°C / {weatherData.main.temp_max}°F
+          {weatherData.main.temp_min}°C /{" "}
+          {toFahrenheit(weatherData.main.temp_max).toFixed(1)}°F
         </p>
         <p>
           <span className="font-bold">Humidity: </span>

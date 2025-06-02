@@ -6,8 +6,6 @@ export default function ForecastCard({ forecastData }) {
   const forecastList = forecastData.list;
   const weekday = {};
 
-  console.log("loop starts", forecastData.list);
-
   for (let i = 0; i < forecastData.list.length; i++) {
     let day = forecastList[i].dt_txt.split(" ")[0];
     let tempMax = forecastList[i].main.temp_max;
@@ -17,7 +15,7 @@ export default function ForecastCard({ forecastData }) {
       weekday[day] = { high: tempMax, low: tempMin };
     } else {
       weekday[day].high = Math.max(weekday[day].high, tempMax);
-      weekday[day].low = Math.max(weekday[day].low, tempMin);
+      weekday[day].low = Math.min(weekday[day].low, tempMin);
     }
   }
 
@@ -33,14 +31,16 @@ export default function ForecastCard({ forecastData }) {
   ];
 
   for (let day in weekday) {
-    console.log("check day", day);
     const date = new Date(day);
 
     days.push(
-      <div key={date} className="">
-        <p>{weekDays[date.getDay()]}</p>
-        <p>Hi: {weekday[day].high}</p>
-        <p>Low: {weekday[day].low}</p>
+      <div
+        key={date}
+        className="bg-white dark:bg-gray-800 rounded shadow p-4 text-center"
+      >
+        <p className="font-semibold">{weekDays[date.getDay()]}</p>
+        <p>🌡️ Hi:{weekday[day].high}</p>
+        <p>❄️ Low: {weekday[day].low}</p>
       </div>
     );
   }
