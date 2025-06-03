@@ -23,10 +23,17 @@ export default function CurrentWeather({ weatherData }) {
           {weatherData.main.humidity}%
         </p>
         <p>
+          <span className="font-bold">Windspeed: </span>
+          {weatherData.wind.speed} mph
+        </p>
+        <p>
           <span className="font-bold">Description: </span>
           {weatherData.weather[0].description}
         </p>
         {/* Weather Icon will go here */}
+        <p>
+          <span className="font-bold">Icon: </span>
+        </p>
       </section>
     </div>
   );
