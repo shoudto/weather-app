@@ -6,8 +6,6 @@ export default function ForecastCard({ forecastData }) {
   const forecastList = forecastData.list;
   const weekday = {};
 
-  console.log(forecastData.list[0].weather[0].icon);
-
   for (let i = 0; i < forecastData.list.length; i++) {
     const day = forecastList[i].dt_txt.split(" ")[0];
     const tempMax = forecastList[i].main.temp_max;
@@ -45,7 +43,7 @@ export default function ForecastCard({ forecastData }) {
         <p className="font-semibold">{weekDays[date.getDay()]}</p>
         <p>🌡️ Hi:{weekday[day].high}</p>
         <p>❄️ Low: {weekday[day].low}</p>
-        <img src={iconUrl} alt="not working" />
+        <img src={iconUrl} alt="not working" className="mx-auto w-16 h-16" />
       </div>
     );
   }
