@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -10,6 +10,7 @@ function App() {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState(null);
+  const [searchHistory, setSearchHistory] = useState([]);
 
   // Weather API
   const handleSearch = async (e) => {
@@ -40,10 +41,30 @@ function App() {
 
       const dataForecast = await forecastRes.json();
       setForecastData(dataForecast);
+
+      // localStorage
+      if (!searchHistory.includes(city)) {
+        const updatedHistory = [city, ...searchHistory];
+        setSearchHistory(updatedHistory);
+        localStorage.setItem("searchHistory", JSON.stringify(updatedHistory));
+      }
     } catch (err) {
       console.log(err.message);
     }
   };
+
+  useEffect(() => {
+    const savedHistory = JSON.parse(localStorage.getItem("searchHistory"));
+    const savedCity = localStorage.getItem("city");
+
+    if (savedHistory) {
+      setSearchHistory(savedHistory);
+    }
+
+    if (savedCity) {
+      setCity(savedCity);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-white p-4">

@@ -3,6 +3,8 @@ import React from "react";
 export default function ForecastCard({ forecastData }) {
   if (!forecastData) return null;
 
+  console.log(forecastData.list[0]);
+
   const forecastList = forecastData.list;
   const weekday = {};
 
