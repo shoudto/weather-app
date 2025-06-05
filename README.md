@@ -45,9 +45,8 @@ A responsive React.js web application that displays current weather and a 6-day 
    npm install
    
 3. **Run the development server**
- ``` bash
+   ``` bash
    npm run dev
- ```
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
