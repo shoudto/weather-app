@@ -12,7 +12,6 @@ function App() {
   const [forecastData, setForecastData] = useState(null);
   const [searchHistory, setSearchHistory] = useState([]);
 
-  // added comment
   // Weather API
   const handleSearch = async (e) => {
     e.preventDefault();
