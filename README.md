@@ -5,6 +5,41 @@
 
 - 🌱 I’m currently learning **React and Tailwind**
 
+# 🌦️ Weather Dashboard
+
+A responsive React.js web application that displays current weather and a 6-day forecast for any city using the OpenWeatherMap API. The app also saves search history locally and supports light/dark themes.
+
+## 🚀 Features
+
+- 🌍 Search current weather by city
+- 📆 6-day forecast with daily high/low and icons
+- 🌡️ Temperature shown in °C and °F
+- 💾 Search history saved using localStorage
+- 🎨 Responsive design with dark mode toggle (UI placeholder)
+- ⚛️ Built with modern React (Hooks, Components)
+
+## 🖥️ Demo
+
+[Live Demo (if deployed)](https://your-demo-link.com)
+
+## 🧪 Tech Stack
+
+- **React** (with Vite)
+- **Tailwind CSS**
+- **OpenWeatherMap API**
+- **LocalStorage API**
+
+## 📸 Screenshots
+
+_Add screenshots of the main UI, mobile view, or forecast section._
+
+## 🛠️ Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/weather-dashboard.git
+   cd weather-dashboard
+
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 <a href="https://linkedin.com/in/shoudt" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="shoudt" height="30" width="40" /></a>
