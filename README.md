@@ -39,6 +39,15 @@ A responsive React.js web application that displays current weather and a 6-day 
    ```bash
    git clone https://github.com/yourusername/weather-dashboard.git
    cd weather-dashboard
+   
+2. **Install dependencies**
+   ```bash
+   npm install
+   
+3. **Run the development server**
+ ``` bash
+   npm run dev
+ ```
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
