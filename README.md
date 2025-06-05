@@ -20,7 +20,7 @@ A responsive React.js web application that displays current weather and a 6-day 
 
 ## 🖥️ Demo
 
-[Live Demo (if deployed)](https://your-demo-link.com)
+[weather-app](https://weather-app-theta-seven-49.vercel.app/)
 
 ## 🧪 Tech Stack
 
@@ -31,7 +31,7 @@ A responsive React.js web application that displays current weather and a 6-day 
 
 ## 📸 Screenshots
 
-_Add screenshots of the main UI, mobile view, or forecast section._
+<img width="1433" alt="image" src="https://github.com/user-attachments/assets/30be9fb2-c426-4bd3-a524-bb9e805355bf" />
 
 ## 🛠️ Installation
 
