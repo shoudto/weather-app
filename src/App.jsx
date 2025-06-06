@@ -66,6 +66,8 @@ function App() {
     }
   }, []);
 
+  console.log(searchHistory);
+
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-white p-4">
       {/* HEADER */}
@@ -78,6 +80,13 @@ function App() {
 
       {/* Search Form */}
       <SearchForm city={city} setCity={setCity} handleSearch={handleSearch} />
+
+      {/* Search History */}
+      <h2 className="text-xl font-semibold underline">Search History</h2>
+      {searchHistory.map((pastCity) => (
+        <p>{pastCity}</p>
+      ))}
+      <br />
 
       {/* Current Weather Section */}
       <CurrentWeather weatherData={weatherData} />
